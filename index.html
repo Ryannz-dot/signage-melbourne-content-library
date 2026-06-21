@@ -83,6 +83,7 @@
     .nav-links {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: clamp(12px, 2vw, 28px);
       color: var(--muted);
       font-size: 0.94rem;
@@ -100,11 +101,9 @@
     }
 
     .hero {
-      min-height: calc(100svh - 73px);
+      min-height: min(680px, calc(100svh - 73px));
       display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
       align-items: center;
-      gap: clamp(32px, 6vw, 88px);
       padding: clamp(54px, 8vw, 108px) clamp(20px, 6vw, 82px);
       background:
         radial-gradient(circle at 83% 18%, rgba(214, 139, 45, 0.18), transparent 28%),
@@ -112,7 +111,7 @@
     }
 
     .hero-copy {
-      max-width: 720px;
+      max-width: 860px;
       animation: riseIn 680ms ease both;
     }
 
@@ -176,102 +175,6 @@
       color: #fff;
       background: var(--teal);
     }
-
-    .hero-visual {
-      position: relative;
-      min-height: min(620px, 68svh);
-      display: grid;
-      align-items: center;
-      animation: fadeIn 780ms 120ms ease both;
-    }
-
-    .sign-wall {
-      position: relative;
-      min-height: 540px;
-      border-radius: 8px;
-      overflow: hidden;
-      background:
-        linear-gradient(160deg, rgba(34, 48, 71, 0.92), rgba(23, 32, 42, 0.72)),
-        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 74px);
-      box-shadow: var(--shadow);
-      transform: rotate(-1.2deg);
-    }
-
-    .sign-wall::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 30%, rgba(255, 255, 255, 0.1)),
-        radial-gradient(circle at 20% 22%, rgba(214, 139, 45, 0.22), transparent 22%),
-        radial-gradient(circle at 78% 68%, rgba(15, 118, 110, 0.24), transparent 24%);
-      pointer-events: none;
-    }
-
-    .sign-line {
-      position: absolute;
-      left: 10%;
-      right: 10%;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.16);
-    }
-
-    .sign-line:nth-child(1) { top: 18%; }
-    .sign-line:nth-child(2) { top: 45%; }
-    .sign-line:nth-child(3) { top: 72%; }
-
-    .sign-panel {
-      position: absolute;
-      display: grid;
-      align-content: center;
-      min-height: 88px;
-      padding: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      border-radius: 7px;
-      color: #fff;
-      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
-      transition: transform 260ms ease;
-    }
-
-    .sign-panel strong {
-      display: block;
-      font-size: clamp(1.15rem, 2vw, 1.72rem);
-      line-height: 1.05;
-    }
-
-    .sign-panel span {
-      margin-top: 8px;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 0.84rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .panel-one {
-      top: 8%;
-      left: 8%;
-      width: 54%;
-      background: var(--teal);
-    }
-
-    .panel-two {
-      top: 34%;
-      right: 7%;
-      width: 50%;
-      background: var(--amber);
-    }
-
-    .panel-three {
-      bottom: 8%;
-      left: 14%;
-      width: 62%;
-      background: var(--rose);
-    }
-
-    .hero-visual:hover .panel-one { transform: translate3d(8px, -6px, 0); }
-    .hero-visual:hover .panel-two { transform: translate3d(-8px, 4px, 0); }
-    .hero-visual:hover .panel-three { transform: translate3d(10px, 5px, 0); }
 
     main {
       background: var(--surface);
@@ -448,20 +351,8 @@
     }
 
     @media (max-width: 980px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
       h1 {
         max-width: 12ch;
-      }
-
-      .hero-visual {
-        min-height: 440px;
-      }
-
-      .sign-wall {
-        min-height: 430px;
       }
 
       .section-heading,
@@ -483,7 +374,7 @@
 
       .nav-links {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 10px;
         font-size: 0.86rem;
       }
@@ -530,6 +421,7 @@
         <a href="#money-pages">Money Pages</a>
         <a href="#service-pages">Service Pages</a>
         <a href="#location-pages">Location Pages</a>
+        <a href="#blogs">Blogs</a>
         <a href="#about-us">About Us</a>
       </nav>
     </header>
@@ -538,30 +430,11 @@
       <div class="hero-copy">
         <p class="eyebrow">Content index</p>
         <h1>Signage Melbourne Content Library</h1>
-        <p>A clean one-page hub for all supplied Google Docs, organized by money pages, service pages, and location pages.</p>
+        <p>A clean one-page hub for all supplied Google Docs, organized by money pages, service pages, location pages, and blogs.</p>
         <div class="hero-actions" aria-label="Primary actions">
           <a class="button primary" href="#money-pages">View documents</a>
           <a class="button" href="#location-pages">Check location pages</a>
-        </div>
-      </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <div class="sign-wall">
-          <span class="sign-line"></span>
-          <span class="sign-line"></span>
-          <span class="sign-line"></span>
-          <div class="sign-panel panel-one">
-            <strong>9 Money Pages</strong>
-            <span>Google Docs ready</span>
-          </div>
-          <div class="sign-panel panel-two">
-            <strong>4 Service Pages</strong>
-            <span>Structured links</span>
-          </div>
-          <div class="sign-panel panel-three">
-            <strong>8 Location Pages</strong>
-            <span>All documents linked</span>
-          </div>
+          <a class="button" href="#blogs">View blogs</a>
         </div>
       </div>
     </section>
@@ -708,7 +581,59 @@
         </div>
       </section>
 
-      <section class="section service-band" id="about-us">
+      <section class="section service-band" id="blogs">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2>Blogs</h2>
+            <p>Editorial content documents covering signage costs, materials, approvals, maintenance, and use cases.</p>
+          </div>
+
+          <div class="document-grid">
+            <a class="document-link" href="https://docs.google.com/document/d/1hHRUinECpRlQ-g5m-Mdl7LYBmRwojiVzp8JXkDr17tY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="doc-type">Blog</span>
+              <p class="doc-name">Signage Melbourne Blog 1 - How Much Does Signage Cost In Melbourne?</p>
+              <span class="doc-action">Open document</span>
+            </a>
+            <a class="document-link" href="https://docs.google.com/document/d/11LAxPiafoOSMdZgYyOY6hf6UkBqryt2WCXvtA526hpM/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="doc-type">Blog</span>
+              <p class="doc-name">Signage Melbourne Blog 2 - ACM vs Corflute Signage</p>
+              <span class="doc-action">Open document</span>
+            </a>
+            <a class="document-link" href="https://docs.google.com/document/d/1U7cPMWsGWHtEuyZ7CvZQeu4VPB-6ObglIwcSe_ramHo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="doc-type">Blog</span>
+              <p class="doc-name">Signage Melbourne Blog 3 - Do I Need Council Approval For Signage?</p>
+              <span class="doc-action">Open document</span>
+            </a>
+            <a class="document-link" href="https://docs.google.com/document/d/1VpRoUDhucTbWRljLpcW2PbwLZOWoqmam9WYtRtw4xPY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="doc-type">Blog</span>
+              <p class="doc-name">Signage Melbourne Blog 4 - Best Signage For Builders</p>
+              <span class="doc-action">Open document</span>
+            </a>
+            <a class="document-link" href="https://docs.google.com/document/d/1M9nOwYyMw8W1919doPgjRXH_zzaxcuylKUasWcGi0yc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="doc-type">Blog</span>
+              <p class="doc-name">Signage Melbourne Blog 5 - Signage Materials Explained</p>
+              <span class="doc-action">Open document</span>
+            </a>
+            <a class="document-link" href="https://docs.google.com/document/d/16Qh0N8wZQD5hvj5WCtWoggIarUG8hjELU-NTX7YkNMc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="doc-type">Blog</span>
+              <p class="doc-name">Signage Melbourne Blog 6 - How Long Does Vehicle Wrap Vinyl Last?</p>
+              <span class="doc-action">Open document</span>
+            </a>
+            <a class="document-link" href="https://docs.google.com/document/d/1KifGJSbe7kjbKItUofn-1CdxDwvUnnjf_tq2Xe_wPfk/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="doc-type">Blog</span>
+              <p class="doc-name">Signage Melbourne Blog 7 - What Signage Works Best For Retail Stores?</p>
+              <span class="doc-action">Open document</span>
+            </a>
+            <a class="document-link" href="https://docs.google.com/document/d/1Yma0o3PTuCQM3JVjup0x3k3XU0HWFqzSHXWF2VWw1kM/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="doc-type">Blog</span>
+              <p class="doc-name">Signage Melbourne Blog 8 - Signage Maintenance Guide</p>
+              <span class="doc-action">Open document</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about-us">
         <div class="section-inner">
           <div class="section-heading">
             <h2>About Us</h2>
