@@ -4,19 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Signage Melbourne Content Library</title>
-  <meta name="description" content="A professional one-page index of Signage Melbourne money page, service page, and location page content documents.">
+  <meta name="description" content="A professional one-page index of Signage Melbourne content documents.">
   <style>
     :root {
-      --ink: #17202a;
-      --muted: #64707d;
-      --paper: #f7f4ee;
+      --ink: #18212d;
+      --muted: #667085;
+      --paper: #f6f7f9;
       --surface: #ffffff;
-      --line: #d9d2c5;
-      --amber: #d68b2d;
-      --teal: #0f766e;
-      --navy: #223047;
-      --rose: #a8324a;
-      --shadow: 0 22px 70px rgba(23, 32, 42, 0.16);
+      --line: #e3e7ed;
+      --accent: #c87f1f;
+      --accent-dark: #8a530f;
     }
 
     * {
@@ -32,7 +29,7 @@
       color: var(--ink);
       background: var(--paper);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     a {
@@ -51,10 +48,10 @@
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      padding: 18px clamp(20px, 4vw, 56px);
-      background: rgba(247, 244, 238, 0.88);
-      border-bottom: 1px solid rgba(217, 210, 197, 0.82);
-      backdrop-filter: blur(18px);
+      padding: 16px clamp(20px, 4vw, 56px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
     }
 
     .brand {
@@ -74,9 +71,8 @@
       display: grid;
       place-items: center;
       color: #fff;
-      background: linear-gradient(135deg, var(--teal), var(--rose));
+      background: var(--ink);
       border-radius: 6px;
-      box-shadow: 0 10px 30px rgba(15, 118, 110, 0.28);
       font-size: 0.9rem;
     }
 
@@ -97,17 +93,15 @@
 
     .nav-links a:hover,
     .nav-links a:focus-visible {
-      color: var(--teal);
+      color: var(--accent-dark);
     }
 
     .hero {
-      min-height: min(620px, calc(100svh - 73px));
+      min-height: min(540px, calc(100svh - 69px));
       display: grid;
       place-items: center;
-      padding: clamp(64px, 9vw, 118px) clamp(20px, 6vw, 82px);
-      background:
-        radial-gradient(circle at 83% 18%, rgba(214, 139, 45, 0.18), transparent 28%),
-        linear-gradient(135deg, #fbf9f3 0%, #f2ece2 48%, #e6ded1 100%);
+      padding: clamp(58px, 8vw, 96px) clamp(20px, 6vw, 82px);
+      background: var(--paper);
       text-align: center;
     }
 
@@ -119,7 +113,7 @@
 
     .eyebrow {
       margin: 0 0 18px;
-      color: var(--teal);
+      color: var(--accent-dark);
       font-size: 0.82rem;
       font-weight: 900;
       letter-spacing: 0.14em;
@@ -128,9 +122,9 @@
 
     h1 {
       margin: 0 auto;
-      max-width: 12ch;
-      font-size: clamp(3.2rem, 8.2vw, 7.4rem);
-      line-height: 0.92;
+      max-width: 14ch;
+      font-size: clamp(2.9rem, 7vw, 6.2rem);
+      line-height: 0.96;
       letter-spacing: 0;
     }
 
@@ -146,7 +140,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin-top: 34px;
+      margin-top: 30px;
     }
 
     .button {
@@ -173,10 +167,10 @@
 
     .button:hover,
     .button:focus-visible {
-      transform: translateY(-2px);
-      border-color: var(--teal);
+      transform: translateY(-1px);
+      border-color: var(--accent-dark);
       color: #fff;
-      background: var(--teal);
+      background: var(--accent-dark);
     }
 
     main {
@@ -184,7 +178,7 @@
     }
 
     .section {
-      padding: clamp(62px, 8vw, 112px) clamp(20px, 6vw, 82px);
+      padding: clamp(52px, 7vw, 90px) clamp(20px, 6vw, 82px);
       border-top: 1px solid var(--line);
     }
 
@@ -198,13 +192,13 @@
       grid-template-columns: minmax(0, 0.9fr) minmax(240px, 0.45fr);
       gap: 28px;
       align-items: end;
-      margin-bottom: clamp(28px, 4vw, 46px);
+      margin-bottom: clamp(24px, 4vw, 36px);
     }
 
     h2 {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 4.2rem);
-      line-height: 0.98;
+      font-size: clamp(1.9rem, 3.6vw, 3.4rem);
+      line-height: 1.02;
       letter-spacing: 0;
     }
 
@@ -217,31 +211,31 @@
     .document-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
+      gap: 16px;
     }
 
-    .document-link,
-    .document-pending {
-      min-height: 176px;
+    .document-link {
+      min-height: 146px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 24px;
-      padding: clamp(20px, 3vw, 30px);
+      gap: 18px;
+      padding: clamp(18px, 2.6vw, 24px);
       background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
       text-decoration: none;
-      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
 
     .document-link:hover,
     .document-link:focus-visible {
       position: relative;
       z-index: 2;
-      color: #fff;
-      background: var(--navy);
-      transform: translateY(-4px);
+      color: var(--ink);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(24, 33, 45, 0.08);
       outline: none;
     }
 
@@ -249,13 +243,13 @@
     .document-link:hover .doc-action,
     .document-link:focus-visible .doc-type,
     .document-link:focus-visible .doc-action {
-      color: rgba(255, 255, 255, 0.72);
+      color: var(--accent-dark);
     }
 
     .doc-type,
     .doc-action {
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -264,9 +258,9 @@
 
     .doc-name {
       margin: 0;
-      font-size: clamp(1.18rem, 1.7vw, 1.48rem);
-      line-height: 1.14;
-      font-weight: 850;
+      font-size: clamp(1.04rem, 1.4vw, 1.24rem);
+      line-height: 1.22;
+      font-weight: 800;
     }
 
     .doc-action {
@@ -275,32 +269,14 @@
       gap: 8px;
     }
 
-    .doc-action::after {
-      content: "↗";
-      font-size: 1rem;
-      line-height: 1;
-    }
-
     .service-band {
-      background:
-        linear-gradient(90deg, rgba(15, 118, 110, 0.08), transparent 42%),
-        #fbfaf6;
+      background: #fafbfc;
     }
 
     .location-list {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .document-pending {
-      min-height: 128px;
-    }
-
-    .document-pending .doc-action {
-      color: #9a6a2e;
+      gap: 16px;
     }
 
     .footer {
@@ -309,7 +285,7 @@
       justify-content: space-between;
       gap: 18px;
       padding: 30px clamp(20px, 6vw, 82px);
-      color: #f7f4ee;
+      color: #edf0f3;
       background: var(--ink);
       font-size: 0.95rem;
     }
@@ -324,17 +300,6 @@
       from {
         opacity: 0;
         transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
       }
       to {
         opacity: 1;
@@ -404,8 +369,7 @@
         grid-template-columns: 1fr;
       }
 
-      .document-link,
-      .document-pending {
+      .document-link {
         min-height: 148px;
       }
 
@@ -436,11 +400,9 @@
       <div class="hero-copy">
         <p class="eyebrow">Content index</p>
         <h1>Signage Melbourne Content Library</h1>
-        <p>A clean one-page hub for all supplied Google Docs, organized by money pages, service pages, location pages, and blogs.</p>
+        <p>A simple one-page hub for 30 linked Google Docs across money pages, service pages, location pages, blogs, and About Us.</p>
         <div class="hero-actions" aria-label="Primary actions">
-          <a class="button primary" href="#money-pages">View documents</a>
-          <a class="button" href="#location-pages">Check location pages</a>
-          <a class="button" href="#blogs">View blogs</a>
+          <a class="button primary" href="#money-pages">Browse documents</a>
         </div>
       </div>
     </section>
